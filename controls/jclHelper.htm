@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>BLANK</title>
+</head>
+<body>
+<form method='get'><input id='h' name='h'/></form>
+<script>
+  window.onload = function() {
+    var h = document.getElementsByName('h')[0];
+    var v = h.value;
+    if (v != '') {
+      parent.location.hash = v;
+    } else {
+      h.value = parent.location.hash;
+    }
+  }
+</script>
+
+</body>
+</html>

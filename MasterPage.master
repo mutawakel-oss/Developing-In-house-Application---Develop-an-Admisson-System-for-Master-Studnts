@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" CodeFile="MasterPage.master.cs" Inherits="MasterPage_master" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="HeadElement" runat="server">
+	<title>مرحباً بك في نظام التسجيل الإلكتروني</title>
+ 
+ <link href="mathertel.css" rel="stylesheet" type="text/css" />
+ <script type="text/javascript" src="controls/PopUp.js"> </script>
+ <style type="text/css" type="text/css">
+
+.FormDropdown {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width: 150px;
+	behavior:url(EditableDropdown.htc);
+}
+.FormTextbox{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+</style>
+</head>
+<body  style="background-image:url(images/arabic-only-no-title-narrow.jpg);background-repeat:no-repeat;background-position:top;  ">
+	<form autocomplete="off" id="MainForm" runat="server">
+	    <br /><br /><br /><br /><br /><br /><br /><br />
+				
+		
+
+		
+		<%--<div id="crumbs" align="center"   >
+			<asp:ContentPlaceHolder ID="SecondBar" runat="server">
+				<div id="crumbs_text" style="width: 1009px" >
+                    &nbsp;</div>
+			</asp:ContentPlaceHolder>
+		</div>--%>
+		<asp:ContentPlaceHolder ID="Main" runat="server" >
+			<div id="col_main_left" >
+				<div id="featured_item">
+				</div>
+				<div id="announcements">
+				</div>
+			</div>
+			<div id="col_main_right" >
+				<h3 class="section">
+					</h3>
+				<div class="content_right">
+				</div>
+			</div>
+		</asp:ContentPlaceHolder>
+		
+		<%--<div id="footer" align="center"   >
+			<div id="footer_nav">
+				<asp:Menu runat="server" ID="FooterMenu" DataSourceID="SiteMapDataSource" StaticDisplayLevels="1"
+					MaximumDynamicDisplayLevels="0" Orientation="Horizontal">
+				</asp:Menu>
+			</div>
+		</div>--%>
+		
+		<div id="disclaimer">
+			<a href="#">Disclaimer</a>Copywrite 
+		</div>
+		<asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" ShowStartingNode="False" />
+		
+		
+		<%--<div  id="footer" align="center"   >--%>
+		<%--<asp:ContentPlaceHolder ID="SecondBar" runat="server">
+				<div id="crumbs_text" style="width: 1009px" >
+                    &nbsp;</div>
+			</asp:ContentPlaceHolder>--%>
+		<%--</div>--%>
+		
+		
+	</form>
+</body>
+</html>

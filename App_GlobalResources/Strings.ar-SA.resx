@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnLogin" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="lblAcademia" xml:space="preserve">
+    <value>بيانات الدراسة</value>
+  </data>
+  <data name="lblAcademicEndDate" xml:space="preserve">
+    <value>سنــة التــخرج</value>
+  </data>
+  <data name="lblAcademicStartDate" xml:space="preserve">
+    <value>سنةالالتحاق </value>
+  </data>
+  <data name="lblAccounts" xml:space="preserve">
+    <value>البيانات</value>
+  </data>
+  <data name="lblAddress" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="lblAgree" xml:space="preserve">
+    <value>انا مقـر بلقـوانـيـن والانظـمة</value>
+  </data>
+  <data name="lblBeforeSaveInfo" xml:space="preserve">
+    <value>عند اكمالك البينات بنجاح يمكنك تحميل معلوماتك</value>
+  </data>
+  <data name="lblBusinessPhone" xml:space="preserve">
+    <value>هاتف العمل</value>
+  </data>
+  <data name="lblCancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="lblCertificateName" xml:space="preserve">
+    <value>شهادة التخصص</value>
+  </data>
+  <data name="lblChildCount" xml:space="preserve">
+    <value>عـدد الاشخاص الذين تعولهم</value>
+  </data>
+  <data name="lblChildInfo" xml:space="preserve">
+    <value>اذا كنت متزوج هل الديك اطفال</value>
+  </data>
+  <data name="lblCity" xml:space="preserve">
+    <value>المـديـنـة</value>
+  </data>
+  <data name="lblCollegeCountry" xml:space="preserve">
+    <value>الدولة/المدينـة الكلية</value>
+  </data>
+  <data name="lblCollegeName" xml:space="preserve">
+    <value>اسـم الكليــة</value>
+  </data>
+  <data name="lblCollegeNameinUni" xml:space="preserve">
+    <value>الكلية المتخرج منها</value>
+  </data>
+  <data name="lblContinue" xml:space="preserve">
+    <value>تابع</value>
+  </data>
+  <data name="lblCountry" xml:space="preserve">
+    <value>الــدولـة</value>
+  </data>
+  <data name="lblCountryCityName" xml:space="preserve">
+    <value>المديـنة / الدولــة</value>
+  </data>
+  <data name="lblCountryCityNameInfo" xml:space="preserve">
+    <value>الدولــة والمــديـنة مكان الكلية</value>
+  </data>
+  <data name="lblDateInfo" xml:space="preserve">
+    <value>الرجاء ادخال تاريخ الميلاد
+(  السـنة اولاً / الشهرثانيا/ اليوم ثالثاً)
+</value>
+  </data>
+  <data name="lblDateOfGraduation" xml:space="preserve">
+    <value>تاريخ التخرج</value>
+  </data>
+  <data name="lblDOB" xml:space="preserve">
+    <value>تاريـخ الميلاد</value>
+  </data>
+  <data name="lblEMail" xml:space="preserve">
+    <value>البريد الإكتروني</value>
+  </data>
+  <data name="lblEmployee" xml:space="preserve">
+    <value>اذا كنت موظف اذكر اسم الوظيفة</value>
+  </data>
+  <data name="lblFatherName" xml:space="preserve">
+    <value>إسـم الأب</value>
+  </data>
+  <data name="lblFax" xml:space="preserve">
+    <value>الفاكــس</value>
+  </data>
+  <data name="lblFemale" xml:space="preserve">
+    <value>انثى</value>
+  </data>
+  <data name="lblFirstName" xml:space="preserve">
+    <value>الإسم الأول</value>
+  </data>
+  <data name="lblGender" xml:space="preserve">
+    <value>الجنس</value>
+  </data>
+  <data name="lblGotoFinish" xml:space="preserve">
+    <value>اضغط على (ارسال الطلب ) للتحميل</value>
+  </data>
+  <data name="lblGotoNext1" xml:space="preserve">
+    <value>اضغط على ( التالي) للذهاب للصفحه التاليه</value>
+  </data>
+  <data name="lblGotoPrevious1" xml:space="preserve">
+    <value>اضغط على ( السابق) للذهاب للصفحه السابقه</value>
+  </data>
+  <data name="lblGPA" xml:space="preserve">
+    <value>المعــدل التــراكــمي</value>
+  </data>
+  <data name="lblGrade" xml:space="preserve">
+    <value>الدرجــة</value>
+  </data>
+  <data name="lblGraduate" xml:space="preserve">
+    <value>مسار حملة الشهادة الجامعية</value>
+  </data>
+  <data name="lblGraduatedGPA" xml:space="preserve">
+    <value>المعدل التراكمي</value>
+  </data>
+  <data name="lblGraduatedStudent" xml:space="preserve">
+    <value>مسار حملة الشهادة الجامعية</value>
+  </data>
+  <data name="lblGraduationDate" xml:space="preserve">
+    <value>تاريخ التخرج</value>
+  </data>
+  <data name="lblGraduationFrom" xml:space="preserve">
+    <value>تاريخ الالتحاق بالجامعه</value>
+  </data>
+  <data name="lblGraduationTo" xml:space="preserve">
+    <value>تاريخ التخرج من الجامعه</value>
+  </data>
+  <data name="lblGrandFatherName" xml:space="preserve">
+    <value>إسم الجد</value>
+  </data>
+  <data name="lblHafeezaID" xml:space="preserve">
+    <value>رقــم الحـفيظة النفـوس</value>
+  </data>
+  <data name="lblHafeezaIDInfo" xml:space="preserve">
+    <value>اذا كنت من ذوي الاحتياجات الخاصة –اكتبنوع الاعاقه</value>
+  </data>
+  <data name="lblHandicaped" xml:space="preserve">
+    <value>اذا كنت من ذوي الاحتياجات الخاصة –اكتبنوع الاعاقه</value>
+  </data>
+  <data name="lblHighSchool" xml:space="preserve">
+    <value>مسار حملة الشهادة الثانوية</value>
+  </data>
+  <data name="lblHighSchoolGPA" xml:space="preserve">
+    <value>الدرجة </value>
+  </data>
+  <data name="lblHighSchoolStudent" xml:space="preserve">
+    <value>مسار حملة الشهادة الثانوية</value>
+  </data>
+  <data name="lblHomePhone" xml:space="preserve">
+    <value>هاتف المنزل</value>
+  </data>
+  <data name="lblIDExpDate" xml:space="preserve">
+    <value>تاريخ الانتهاء</value>
+  </data>
+  <data name="lblIDIssuedDate" xml:space="preserve">
+    <value>تاريخ اصدار البطاقة</value>
+  </data>
+  <data name="lblIDIssuedPlace" xml:space="preserve">
+    <value>مكان اصدار البطاقة</value>
+  </data>
+  <data name="lblIDIssuedPlaceInfo" xml:space="preserve">
+    <value>الرجاء ادخال مكان الاصدار</value>
+  </data>
+  <data name="lblInstruction" xml:space="preserve">
+    <value>الرجاء ادخال جميع المعلومات المطلوبة , لا يمكنك الاستمرارا قبل اكمال الفرغات , ظهور العلامة "*" يعني هناك نواقص سوف لايسمح لك بلانتقال قبل اكمالها</value>
+  </data>
+  <data name="lblIssuedAt" xml:space="preserve">
+    <value>شسن تيتي ني</value>
+  </data>
+  <data name="lblJob" xml:space="preserve">
+    <value>المهنة</value>
+  </data>
+  <data name="lblLastName" xml:space="preserve">
+    <value>اسم العـائلة</value>
+  </data>
+  <data name="lblLocalID" xml:space="preserve">
+    <value>رقــم بطاقة الاحوال</value>
+  </data>
+  <data name="lblLocalIDInfo" xml:space="preserve">
+    <value>الرجاء ادخال رقم بطاقة الاحوال</value>
+  </data>
+  <data name="lblLoginName" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="lblLoginNameInfo" xml:space="preserve">
+    <value>الرجاء كتابة كلمة المرور باللغه الانجليزيه
+( اولاَ اسـم العائلة + اول حرف من الاسم الاول)
+</value>
+  </data>
+  <data name="lblMajor" xml:space="preserve">
+    <value>التـــــخصص</value>
+  </data>
+  <data name="lblMale" xml:space="preserve">
+    <value>ذكــر</value>
+  </data>
+  <data name="lblMaritalStatus" xml:space="preserve">
+    <value>الحالة الاجتماعيـة</value>
+  </data>
+  <data name="lblMarried" xml:space="preserve">
+    <value>متزوج</value>
+  </data>
+  <data name="lblMobile" xml:space="preserve">
+    <value>الجــوال</value>
+  </data>
+  <data name="lblNext" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="lblOnlyMale" xml:space="preserve">
+    <value>حالياً الطلب خاص بلذكــور</value>
+  </data>
+  <data name="lblOther" xml:space="preserve">
+    <value>بيانات أخرى</value>
+  </data>
+  <data name="lblPassword" xml:space="preserve">
+    <value>كلمـة المرور</value>
+  </data>
+  <data name="lblPasswordInfo" xml:space="preserve">
+    <value>الرجاء ادخال كلمة المرور-من الافضل  ان تكون ارقام مع حروف ( ان تكـون مكونة من ستـة خانات او اكثر) </value>
+  </data>
+  <data name="lblPermAddress" xml:space="preserve">
+    <value>العنوان الدائم</value>
+  </data>
+  <data name="lblPlaceOfBirth" xml:space="preserve">
+    <value>مكان الميلاد</value>
+  </data>
+  <data name="lblPleaseEnter" xml:space="preserve">
+    <value>الرجاء إدخالها نظراً لأهميتها</value>
+  </data>
+  <data name="lblPostalCode" xml:space="preserve">
+    <value>صندوق البريد</value>
+  </data>
+  <data name="lblPresAddress" xml:space="preserve">
+    <value>العنوان الحالي</value>
+  </data>
+  <data name="lblPreSubmitInfo" xml:space="preserve">
+    <value>الرجاء قرائةالقوانين والشروط
+جيداً , عند ارسالك للمعلومات انت مودرك ومقر بقوانين وانضمة الجامعة
+</value>
+  </data>
+  <data name="lblPrevious" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="lblRelation" xml:space="preserve">
+    <value>العلاقة</value>
+  </data>
+  <data name="lblRelativeName" xml:space="preserve">
+    <value>اسم شخص للاتصال عليه عند الحاجه</value>
+  </data>
+  <data name="lblRequiredData" xml:space="preserve">
+    <value>عفواً لم تقم بإدخال المعلومات اللازمة</value>
+  </data>
+  <data name="lblRetypePassword" xml:space="preserve">
+    <value>الرجاء إدخال كلمة المرور مرة أخرى للمطابــقة</value>
+  </data>
+  <data name="lblRetypePasswordInfo" xml:space="preserve">
+    <value>الرجاء إدخال كلمة المرور مرة أخرى للمطابــقة</value>
+  </data>
+  <data name="lblSalutation" xml:space="preserve">
+    <value>سثق</value>
+  </data>
+  <data name="lblSchoolCountry" xml:space="preserve">
+    <value>المديـنة / الدولــة</value>
+  </data>
+  <data name="lblSchoolGraduationDate" xml:space="preserve">
+    <value>تاريخ تخرجــك من الثانويــة العامة</value>
+  </data>
+  <data name="lblSchoolName" xml:space="preserve">
+    <value>اســـم المدرســة</value>
+  </data>
+  <data name="lblSchoolNameInfo" xml:space="preserve">
+    <value>اســم المدرسة المتخرج منها</value>
+  </data>
+  <data name="lblSingle" xml:space="preserve">
+    <value>اعزب</value>
+  </data>
+  <data name="lblStudentName" xml:space="preserve">
+    <value>اسم الطالب</value>
+  </data>
+  <data name="lblSubmitApplication" xml:space="preserve">
+    <value>أرسل الطلب</value>
+  </data>
+  <data name="lblUniversityName" xml:space="preserve">
+    <value>اسـم الجامــعة</value>
+  </data>
+  <data name="lblUniversityNameInfo" xml:space="preserve">
+    <value>الجامعة المتخرج منها </value>
+  </data>
+  <data name="lblZipCode" xml:space="preserve">
+    <value>الرمز البريدي</value>
+  </data>
+  <data name="TextDirection" xml:space="preserve">
+    <value>rtl</value>
+  </data>
+</root>

@@ -1,0 +1,87 @@
+<!------------------------------------------------------------------------
+//	Author:		  Steve Taylor (steve.taylor@astutemedia.com)
+//
+//	Date:		  10/10/2004
+//
+//  File:         EditableDropdown.htc
+//
+//  Description:  An editable dropdown list.
+//
+//----------------------------------------------------------------------->
+<public:component id="EditableDropdown"  name="EditableDropdown" lightWeight="true" >
+
+	<public:property	name="Version"			value="Editable Dropdown 1.0" />
+	<public:property	name="ChangeValue"		value="-2" />
+	<public:attach		event="ondocumentready" handler="Init" />
+	<public:attach		event="onchange"		handler="Change" />
+	<public:method		name="Refresh" />
+	<public:method		name="Change" />
+	<public:event		id="onDropdownChange"	name="ondropdownchange">
+	<public:event		id="onDropdownRefresh"	name="ondropdownrefresh">
+
+</public:component>
+<script language="jscript">
+
+var changed = false;
+var win = window;
+var winDoc = win.document;
+
+function Init()
+{
+	// Check to see if attached to a dropdown list.
+	if(!tagName.toLowerCase() == "select")
+	{
+		alert("Please attach to a dropdown list.");
+		return;
+	}
+}
+
+function Change()
+{
+	// Has the element already changed?
+	if(changed) return;
+	// Check to see if we need to change the dropdown list.
+	if(value != ChangeValue)return;
+	
+	// Create the textbox that will replace the dropdown list.  The id and name are the same as the dropdowns with a "_txt" suffix.
+	var txtElem = winDoc.createElement("<input type='text' id='"+ id +"_txt' name='" + name + "_txt' value='' class='FormTextbox' style='width:" + (style.width - 15) + "px'>");
+	parentElement.appendChild(txtElem);
+	
+	// Create the refresh image and insert.
+	var imgElem = winDoc.createElement("<img src='Refresh.gif' width='15' height='13' border='0' onclick='"+ id +".Refresh();') style='cursor:hand' id='"+ id +"_img'>");
+	txtElem.parentElement.appendChild(imgElem);	
+
+	// Hide the dropdown list and set the "changed" property to true.
+	style.display = "none";
+	changed = true;
+
+	// Set the focus to the new textbox.
+	txtElem.focus();
+	
+	// Fire the "onDropdownChange" event.
+	onDropdownChange.fire(createEventObject());	
+}
+
+function Refresh()
+{
+	// Make sure the dropdown list has changed.
+	if(!changed) return;
+
+	var txt = winDoc.getElementById(id + "_txt");
+	var img = winDoc.getElementById(id + "_img");
+
+	// Remove the textbox and refresh icon.
+	parentElement.removeChild(txt);
+	parentElement.removeChild(img);
+	
+	// Reset the dropdown index.
+	selectedIndex = 0;
+	
+	// Show the dropdown list.
+	style.display = "inline";
+	changed = false;
+
+	// Fire the "onDropdownRefresh" event.
+	onDropdownRefresh.fire(createEventObject());	
+}
+</script>

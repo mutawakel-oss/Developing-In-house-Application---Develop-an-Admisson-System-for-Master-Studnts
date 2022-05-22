@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions targetNamespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" xmlns:intf="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <schema targetNamespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <complexType name="ArrayOf_xsd_string">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]" />
+          </restriction>
+        </complexContent>
+      </complexType>
+      <element name="ArrayOf_xsd_string" nillable="true" type="impl:ArrayOf_xsd_string" />
+      <complexType name="ArrayOf_xsd_double">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:double[]" />
+          </restriction>
+        </complexContent>
+      </complexType>
+      <element name="ArrayOf_xsd_double" nillable="true" type="impl:ArrayOf_xsd_double" />
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="getDriverDeveloperRequest" />
+  <wsdl:message name="getLocationRequest" />
+  <wsdl:message name="getDriverAcessHistoryResponse">
+    <wsdl:part name="getDriverAcessHistoryReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmRequest">
+    <wsdl:part name="name" type="xsd:string" />
+    <wsdl:part name="value" type="xsd:double" />
+    <wsdl:part name="limit" type="xsd:string" />
+    <wsdl:part name="DataCollectionPlan_Id" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getDriverDeveloperResponse">
+    <wsdl:part name="getDriverDeveloperReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmsResponse">
+    <wsdl:part name="getAlarmsReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getNameRequest">
+    <wsdl:part name="type" type="xsd:int" />
+    <wsdl:part name="id" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getDriverInstancesRequest" />
+  <wsdl:message name="getDataCollectionPlansRequest" />
+  <wsdl:message name="changeDriverStateResponse" />
+  <wsdl:message name="getDriverAcessHistoryRequest" />
+  <wsdl:message name="activateDataCollectionPlanResponse">
+    <wsdl:part name="activateDataCollectionPlanReturn" type="impl:ArrayOf_xsd_double" />
+  </wsdl:message>
+  <wsdl:message name="setAlarmResponse" />
+  <wsdl:message name="getDataCollectionPlansResponse">
+    <wsdl:part name="getDataCollectionPlansReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getEquipmentStateRequest" />
+  <wsdl:message name="getEquipmentTypeRequest" />
+  <wsdl:message name="updateDriverRequest" />
+  <wsdl:message name="getSubsystemsAndModulsResponse">
+    <wsdl:part name="getSubsystemsAndModulsReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getSubsystemsRequest" />
+  <wsdl:message name="getEquipmentSupplierRequest" />
+  <wsdl:message name="getDriverInstancesResponse">
+    <wsdl:part name="getDriverInstancesReturn" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getModulsResponse">
+    <wsdl:part name="getModulsReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="maintenanceEquipmentRequest" />
+  <wsdl:message name="getEventsResponse">
+    <wsdl:part name="getEventsReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getDriverStateRequest" />
+  <wsdl:message name="getEquipmentDatapackageRequest" />
+  <wsdl:message name="getDriverDatapackageRequest" />
+  <wsdl:message name="changeDriverStateRequest" />
+  <wsdl:message name="activateDataCollectionPlanRequest">
+    <wsdl:part name="ID" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="changeEquipmentStateResponse" />
+  <wsdl:message name="getDriverAccessResponse">
+    <wsdl:part name="getDriverAccessReturn" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getNameResponse">
+    <wsdl:part name="getNameReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getLocationResponse">
+    <wsdl:part name="getLocationReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmsRequest">
+    <wsdl:part name="DataCollectionPlan_ID" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="changeEquipmentStateRequest">
+    <wsdl:part name="changer" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getDriverVersionRequest" />
+  <wsdl:message name="getEquipmentDatapackageResponse">
+    <wsdl:part name="getEquipmentDatapackageReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getMaintenanceDateRequest" />
+  <wsdl:message name="getEquipmentStateResponse">
+    <wsdl:part name="getEquipmentStateReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getDriverVersionResponse">
+    <wsdl:part name="getDriverVersionReturn" type="xsd:double" />
+  </wsdl:message>
+  <wsdl:message name="maintenanceEquipmentResponse" />
+  <wsdl:message name="getSubsystemsAndModulsRequest" />
+  <wsdl:message name="getSubsystemsResponse">
+    <wsdl:part name="getSubsystemsReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmMessageRequest">
+    <wsdl:part name="dataCollectionPlan_Id" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getDriverAccessRequest" />
+  <wsdl:message name="getDriverDatapackageResponse">
+    <wsdl:part name="getDriverDatapackageReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getModulsRequest" />
+  <wsdl:message name="getMaintenanceDateResponse">
+    <wsdl:part name="getMaintenanceDateReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateDriverResponse">
+    <wsdl:part name="updateDriverReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getEquipmentSupplierResponse">
+    <wsdl:part name="getEquipmentSupplierReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmMessageResponse">
+    <wsdl:part name="getAlarmMessageReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getEquipmentTypeResponse">
+    <wsdl:part name="getEquipmentTypeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getEventsRequest" />
+  <wsdl:message name="getDriverStateResponse">
+    <wsdl:part name="getDriverStateReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="WSDVED12XY">
+    <wsdl:operation name="getName" parameterOrder="type id">
+      <wsdl:input message="impl:getNameRequest" name="getNameRequest" />
+      <wsdl:output message="impl:getNameResponse" name="getNameResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getLocation">
+      <wsdl:input message="impl:getLocationRequest" name="getLocationRequest" />
+      <wsdl:output message="impl:getLocationResponse" name="getLocationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDriverState">
+      <wsdl:input message="impl:getDriverStateRequest" name="getDriverStateRequest" />
+      <wsdl:output message="impl:getDriverStateResponse" name="getDriverStateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changeDriverState">
+      <wsdl:input message="impl:changeDriverStateRequest" name="changeDriverStateRequest" />
+      <wsdl:output message="impl:changeDriverStateResponse" name="changeDriverStateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDriverVersion">
+      <wsdl:input message="impl:getDriverVersionRequest" name="getDriverVersionRequest" />
+      <wsdl:output message="impl:getDriverVersionResponse" name="getDriverVersionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDriver">
+      <wsdl:input message="impl:updateDriverRequest" name="updateDriverRequest" />
+      <wsdl:output message="impl:updateDriverResponse" name="updateDriverResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDriverAccess">
+      <wsdl:input message="impl:getDriverAccessRequest" name="getDriverAccessRequest" />
+      <wsdl:output message="impl:getDriverAccessResponse" name="getDriverAccessResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDriverInstances">
+      <wsdl:input message="impl:getDriverInstancesRequest" name="getDriverInstancesRequest" />
+      <wsdl:output message="impl:getDriverInstancesResponse" name="getDriverInstancesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDriverDeveloper">
+      <wsdl:input message="impl:getDriverDeveloperRequest" name="getDriverDeveloperRequest" />
+      <wsdl:output message="impl:getDriverDeveloperResponse" name="getDriverDeveloperResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDriverAcessHistory">
+      <wsdl:input message="impl:getDriverAcessHistoryRequest" name="getDriverAcessHistoryRequest" />
+      <wsdl:output message="impl:getDriverAcessHistoryResponse" name="getDriverAcessHistoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDriverDatapackage">
+      <wsdl:input message="impl:getDriverDatapackageRequest" name="getDriverDatapackageRequest" />
+      <wsdl:output message="impl:getDriverDatapackageResponse" name="getDriverDatapackageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getEquipmentDatapackage">
+      <wsdl:input message="impl:getEquipmentDatapackageRequest" name="getEquipmentDatapackageRequest" />
+      <wsdl:output message="impl:getEquipmentDatapackageResponse" name="getEquipmentDatapackageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getEquipmentType">
+      <wsdl:input message="impl:getEquipmentTypeRequest" name="getEquipmentTypeRequest" />
+      <wsdl:output message="impl:getEquipmentTypeResponse" name="getEquipmentTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getEquipmentSupplier">
+      <wsdl:input message="impl:getEquipmentSupplierRequest" name="getEquipmentSupplierRequest" />
+      <wsdl:output message="impl:getEquipmentSupplierResponse" name="getEquipmentSupplierResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getEquipmentState">
+      <wsdl:input message="impl:getEquipmentStateRequest" name="getEquipmentStateRequest" />
+      <wsdl:output message="impl:getEquipmentStateResponse" name="getEquipmentStateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaintenanceDate">
+      <wsdl:input message="impl:getMaintenanceDateRequest" name="getMaintenanceDateRequest" />
+      <wsdl:output message="impl:getMaintenanceDateResponse" name="getMaintenanceDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getSubsystemsAndModuls">
+      <wsdl:input message="impl:getSubsystemsAndModulsRequest" name="getSubsystemsAndModulsRequest" />
+      <wsdl:output message="impl:getSubsystemsAndModulsResponse" name="getSubsystemsAndModulsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getSubsystems">
+      <wsdl:input message="impl:getSubsystemsRequest" name="getSubsystemsRequest" />
+      <wsdl:output message="impl:getSubsystemsResponse" name="getSubsystemsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getModuls">
+      <wsdl:input message="impl:getModulsRequest" name="getModulsRequest" />
+      <wsdl:output message="impl:getModulsResponse" name="getModulsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlarms" parameterOrder="DataCollectionPlan_ID">
+      <wsdl:input message="impl:getAlarmsRequest" name="getAlarmsRequest" />
+      <wsdl:output message="impl:getAlarmsResponse" name="getAlarmsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="maintenanceEquipment">
+      <wsdl:input message="impl:maintenanceEquipmentRequest" name="maintenanceEquipmentRequest" />
+      <wsdl:output message="impl:maintenanceEquipmentResponse" name="maintenanceEquipmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setAlarm" parameterOrder="name value limit DataCollectionPlan_Id">
+      <wsdl:input message="impl:setAlarmRequest" name="setAlarmRequest" />
+      <wsdl:output message="impl:setAlarmResponse" name="setAlarmResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changeEquipmentState" parameterOrder="changer">
+      <wsdl:input message="impl:changeEquipmentStateRequest" name="changeEquipmentStateRequest" />
+      <wsdl:output message="impl:changeEquipmentStateResponse" name="changeEquipmentStateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getEvents">
+      <wsdl:input message="impl:getEventsRequest" name="getEventsRequest" />
+      <wsdl:output message="impl:getEventsResponse" name="getEventsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmMessage" parameterOrder="dataCollectionPlan_Id">
+      <wsdl:input message="impl:getAlarmMessageRequest" name="getAlarmMessageRequest" />
+      <wsdl:output message="impl:getAlarmMessageResponse" name="getAlarmMessageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="activateDataCollectionPlan" parameterOrder="ID">
+      <wsdl:input message="impl:activateDataCollectionPlanRequest" name="activateDataCollectionPlanRequest" />
+      <wsdl:output message="impl:activateDataCollectionPlanResponse" name="activateDataCollectionPlanResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataCollectionPlans">
+      <wsdl:input message="impl:getDataCollectionPlansRequest" name="getDataCollectionPlansRequest" />
+      <wsdl:output message="impl:getDataCollectionPlansResponse" name="getDataCollectionPlansResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSDVED12XYSoapBinding" type="impl:WSDVED12XY">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getName">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getNameRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getNameResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLocation">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getLocationRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getLocationResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverState">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDriverStateRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getDriverStateResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeDriverState">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changeDriverStateRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="changeDriverStateResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverVersion">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDriverVersionRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getDriverVersionResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDriver">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateDriverRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="updateDriverResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverAccess">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDriverAccessRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getDriverAccessResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverInstances">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDriverInstancesRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getDriverInstancesResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverDeveloper">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDriverDeveloperRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getDriverDeveloperResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverAcessHistory">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDriverAcessHistoryRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getDriverAcessHistoryResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverDatapackage">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDriverDatapackageRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getDriverDatapackageResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEquipmentDatapackage">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getEquipmentDatapackageRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getEquipmentDatapackageResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEquipmentType">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getEquipmentTypeRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getEquipmentTypeResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEquipmentSupplier">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getEquipmentSupplierRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getEquipmentSupplierResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEquipmentState">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getEquipmentStateRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getEquipmentStateResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaintenanceDate">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getMaintenanceDateRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getMaintenanceDateResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSubsystemsAndModuls">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getSubsystemsAndModulsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getSubsystemsAndModulsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSubsystems">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getSubsystemsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getSubsystemsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuls">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getModulsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getModulsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarms">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAlarmsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getAlarmsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="maintenanceEquipment">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="maintenanceEquipmentRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="maintenanceEquipmentResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAlarm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="setAlarmRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="setAlarmResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeEquipmentState">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changeEquipmentStateRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="changeEquipmentStateResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEvents">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getEventsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getEventsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmMessage">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAlarmMessageRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getAlarmMessageResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activateDataCollectionPlan">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="activateDataCollectionPlanRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="activateDataCollectionPlanResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataCollectionPlans">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDataCollectionPlansRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:input>
+      <wsdl:output name="getDataCollectionPlansResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" use="encoded" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSDVED12XY">
+    <wsdl:port binding="impl:WSDVED12XYSoapBinding" name="WSDVED12XY">
+      <wsdlsoap:address location="http://wx510071:8080/cgi-bin/WebObjects/EquipmentDashboard.woa/ws/WSDVED12XY" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+
+
+
+

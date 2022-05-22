@@ -1,0 +1,1374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>wwHoverPanel</name>
+    </assembly>
+    <members>
+        <member name="T:Westwind.Tools.wwWebUtils">
+            <summary>
+            Summary description for wwWebUtils.
+            </summary>
+        </member>
+        <member name="M:Westwind.Tools.wwWebUtils.FindControlRecursive(System.Web.UI.Control,System.String)">
+            <summary>
+            Finds a Control recursively. Note finds the first match and exits
+            </summary>
+            <param name="ContainerCtl">The top level container to start searching from</param>
+            <param name="IdToFind">The ID of the control to find</param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwWebUtils.FindControlRecursive(System.Web.UI.Control,System.String,System.Boolean)">
+            <summary>
+            Finds a Control recursively. Note finds the first match and exits
+            </summary>
+            <param name="ContainerCtl">The top level container to start searching from</param>
+            <param name="IdToFind">The ID of the control to find</param>
+            <param name="AlwaysUseFindControl">If true uses FindControl to check for hte primary Id which is slower, but finds dynamically generated control ids inside of INamingContainers</param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwWebUtils.ResolveUrl(System.String)">
+            <summary>
+            Returns a fully qualified HTTP path from a partial path starting out with a ~.
+            Same syntax that ASP.Net internally supports but this method can be used
+            outside of the Page framework
+            </summary>
+            <param name="RelativePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Westwind.Web.Controls.wwErrorDisplay">
+            <summary>
+            A simple ErrorDisplay control that can be used to display error message and
+             binding errors consistently on Web Pages. The class includes several ways 
+            to do display data (ShowError, ShowMessage) as well as direct assignment 
+            and lists displays.
+            
+            Assigning to .Text and with a UserMessage set:
+            &lt;&lt;img 
+            src=&quot;images\DeveloperReference\wwErrorMsg.png&quot;&gt;&gt;
+            
+            ShowMessage:
+            &lt;&lt;img 
+            src=&quot;images\DeveloperReference\wwErrorMsg_Msg.png&quot;&gt;&gt;
+            
+            ShowError:
+            &lt;&lt;img 
+            src=&quot;images\DeveloperReference\wwErrorMsg_Error.png&quot;&gt;&gt;
+            
+            ShowError and ShowMessage are plain display mechanisms that show only the 
+            message specified along with an icon to the left of the message. You can 
+            also assign the Text property directly which assign the message body text. 
+            The UserMessage displays at the top of the control is configurable. You can
+             also have the control timeout and 'fade out' after a few seconds of 
+            displaying the message text.
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwErrorDisplay.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the container
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwErrorDisplay.ShowError(System.String)">
+            <summary>
+            Assigns an error message to the control
+            <seealso>Class wwErrorDisplay</seealso>
+            </summary>
+            <param name="Text">
+            The main message text that is displayed.
+            </param>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwErrorDisplay.ShowError(System.String,System.String)">
+            <summary>
+            Assigns an error message to the control as well as a UserMessage
+            <seealso>Class wwErrorDisplay</seealso>
+            </summary>
+            <param name="Text">
+            The main message text that is displayed.
+            </param>
+            <param name="Message">
+            Optional Message header shown above the message text.
+            </param>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwErrorDisplay.ShowMessage(System.String)">
+            <summary>
+            Displays a simple message in the display area along with the info icon 
+            before it.
+            <seealso>Class wwErrorDisplay</seealso>
+            </summary>
+            <param name="Message">
+            The message to display.
+            </param>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.Text">
+            <summary>
+            The detail text of the error message
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.UserMessage">
+            <summary>
+            The message to display above the error message.
+            For example: Please correct the following:
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.ErrorImage">
+            <summary>
+            Image URL to a warning icon displayed with the error message. Defaults to WarningResource which loads an image resource from the assembly. 
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.InfoImage">
+            <summary>
+            An image Url that is displayed with the ShowMessage method. Defaults to 
+            InfoResource which loads an icon from the control assembly.
+            <seealso>Class wwErrorDisplay</seealso>
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.Center">
+            <summary>
+            Determines whether the display box is centered
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.UseFixedHeightWhenHiding">
+            <summary>
+            Determines whether the control keeps its space padding
+            when it is is hidden in order not to jump the display
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.RenderMode">
+            <summary>
+            Determines how the error dialog renders
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.Width">
+            <summary>
+            The width of the ErrorDisplayBox
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.CellPadding">
+            <summary>
+            Determines the padding inside of the error display box.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.CssClass">
+            <summary>
+            The CSS Class used for the table and column to display this item.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwErrorDisplay.DisplayTimeout">
+            <summary>
+            A timeout in milliseconds for how long the error display is visible. 0 means no timeout.
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.RenderModes.Text">
+            <summary>
+            Error Text is Text and needs fixing up
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.RenderModes.Html">
+            <summary>
+            The text is HTML and ready to display
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.RenderModes.TextAsBulletList">
+            <summary>
+            Text is plain text and should be rendered as a bullet list
+            </summary>
+        </member>
+        <member name="F:Westwind.Tools.wwUtils.MemberAccess">
+            <summary>
+            Binding Flags constant to be reused for all Reflection access methods.
+            </summary>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.FixHTMLForDisplay(System.String)">
+            <summary>
+            Replaces and  and Quote characters to HTML safe equivalents.
+            </summary>
+            <param name="Html">HTML to convert</param>
+            <returns>Returns an HTML string of the converted text</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.StripHtml(System.String)">
+            <summary>
+            Strips HTML tags out of an HTML string and returns just the text.
+            </summary>
+            <param name="Html">Html String</param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.DisplayMemo(System.String)">
+            <summary>
+            Fixes a plain text field for display as HTML by replacing carriage returns 
+            with the appropriate br and p tags for breaks.
+            </summary>
+            <param name="String Text">Input string</param>
+            <returns>Fixed up string</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.DisplayMemoEncoded(System.String)">
+            <summary>
+            Method that handles handles display of text by breaking text.
+            Unlike the non-encoded version it encodes any embedded HTML text
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.ExpandUrls(System.String,System.String)">
+            <summary>
+            Expands links into HTML hyperlinks inside of text or HTML.
+            </summary>
+            <param name="Text">The text to expand</param>
+            <param name="Target">Target frame where output is displayed</param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.Href(System.String,System.String,System.String,System.String)">
+            <summary>
+            Create an Href HTML link
+            </summary>
+            <param name="Text"></param>
+            <param name="Url"></param>
+            <param name="Target"></param>
+            <param name="AdditionalMarkup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.Href(System.String,System.String)">
+            <summary>
+            Created an Href HTML link
+            </summary>
+            <param name="Text"></param>
+            <param name="Url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.ExtractString(System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Extracts a string from between a pair of delimiters. Only the first 
+            instance is found.
+            </summary>
+            <param name="Source">Input String to work on</param>
+            <param name="StartDelim">Beginning delimiter</param>
+            <param name="EndDelim">ending delimiter</param>
+            <param name="CaseInsensitive">Determines whether the search for delimiters is case sensitive</param>
+            <returns>Extracted string or ""</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.ExtractString(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Extracts a string from between a pair of delimiters. Only the first
+            instance is found.
+            <seealso>Class wwUtils</seealso>
+            </summary>
+            <param name="Source">
+            Input String to work on
+            </param>
+            <param name="BeginDelim"></param>
+            <param name="EndDelim">
+            ending delimiter
+            </param>
+            <param name="CaseInSensitive"></param>
+            <returns>String</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.ExtractString(System.String,System.String,System.String)">
+            <summary>
+            Extracts a string from between a pair of delimiters. Only the first 
+            instance is found. Search is case insensitive.
+            </summary>
+            <param name="Source">
+            Input String to work on
+            </param>
+            <param name="StartDelim">
+            Beginning delimiter
+            </param>
+            <param name="EndDelim">
+            ending delimiter
+            </param>
+            <returns>Extracted string or ""</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.Empty(System.String)">
+            <summary>
+            Determines whether a string is empty (null or zero length)
+            </summary>
+            <param name="String">Input string</param>
+            <returns>true or false</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Westwind.Tools.wwUtils.Empty(System.Object)" -->
+        <member name="M:Westwind.Tools.wwUtils.ProperCase(System.String)">
+            <summary>
+            Return a string in proper Case format
+            </summary>
+            <param name="Input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.TextAbstract(System.String,System.Int32)">
+            <summary>
+            Returns an abstract of the provided text by returning up to Length characters
+            of a text string. If the text is truncated a ... is appended.
+            </summary>
+            <param name="Text">Text to abstract</param>
+            <param name="Length">Number of characters to abstract to</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.HtmlAbstract(System.String,System.Int32)">
+            <summary>
+            Creates an Abstract from an HTML document. Strips the 
+            HTML into plain text, then creates an abstract.
+            </summary>
+            <param name="Html"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.LogString(System.String,System.String)">
+            <summary>
+            Simple Logging method that allows quickly writing a string to a file
+            </summary>
+            <param name="Output"></param>
+            <param name="Filename"></param>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.NewStringId">
+            <summary>
+            Creates short string id based on a GUID hashcode.
+            Not guaranteed to unique across machines, but unlikely
+            to duplicate in medium volume situations.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.GetProperty(System.Object,System.String)">
+            <summary>
+            Retrieve a property value from an object dynamically. This is a simple version
+            that uses Reflection calls directly. It doesn't support indexers.
+            </summary>
+            <param name="Object">Object to make the call on</param>
+            <param name="Property">Property to retrieve</param>
+            <returns>Object - cast to proper type</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.GetField(System.Object,System.String)">
+            <summary>
+            Retrieve a field dynamically from an object. This is a simple implementation that's
+            straight Reflection and doesn't support indexers.
+            </summary>
+            <param name="Object">Object to retreve Field from</param>
+            <param name="Property">name of the field to retrieve</param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.GetPropertyInternal(System.Object,System.String)">
+            <summary>
+            Parses Properties and Fields including Array and Collection references.
+            Used internally for the 'Ex' Reflection methods.
+            </summary>
+            <param name="Parent"></param>
+            <param name="Property"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.SetPropertyInternal(System.Object,System.String,System.Object)">
+            <summary>
+            Parses Properties and Fields including Array and Collection references.
+            </summary>
+            <param name="Parent"></param>
+            <param name="Property"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.GetPropertyEx(System.Object,System.String)">
+            <summary>
+            Returns a property or field value using a base object and sub members including . syntax.
+            For example, you can access: this.oCustomer.oData.Company with (this,"oCustomer.oData.Company")
+            This method also supports indexers in the Property value such as:
+            Customer.DataSet.Tables["Customers"].Rows[0]
+            </summary>
+            <param name="Parent">Parent object to 'start' parsing from. Typically this will be the Page.</param>
+            <param name="Property">The property to retrieve. Example: 'Customer.Entity.Company'</param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.SetProperty(System.Object,System.String,System.Object)">
+            <summary>
+            Sets the property on an object. This is a simple method that uses straight Reflection 
+            and doesn't support indexers.
+            </summary>
+            <param name="Object">Object to set property on</param>
+            <param name="Property">Name of the property to set</param>
+            <param name="Value">value to set it to</param>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.SetField(System.Object,System.String,System.Object)">
+            <summary>
+            Sets the field on an object. This is a simple method that uses straight Reflection 
+            and doesn't support indexers.
+            </summary>
+            <param name="Object">Object to set property on</param>
+            <param name="Property">Name of the field to set</param>
+            <param name="Value">value to set it to</param>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.SetPropertyEx(System.Object,System.String,System.Object)">
+            <summary>
+            Sets a value on an object. Supports . syntax for named properties
+            (ie. Customer.Entity.Company) as well as indexers.
+            </summary>
+            <param name="Object Parent">
+            Object to set the property on.
+            </param>
+            <param name="String Property">
+            Property to set. Can be an object hierarchy with . syntax and can 
+            include indexers. Examples: Customer.Entity.Company, 
+            Customer.DataSet.Tables["Customers"].Rows[0]
+            </param>
+            <param name="Object Value">
+            Value to set the property to
+            </param>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.CallMethod(System.Object,System.String,System.Object[])">
+            <summary>
+            Calls a method on an object dynamically.
+            </summary>
+            <param name="Params"></param>
+            1st - Method name, 2nd - 1st parameter, 3rd - 2nd parm etc.
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.CallMethodEx(System.Object,System.String,System.Object[])">
+            <summary>
+            Calls a method on an object with extended . syntax (object: this Method: Entity.CalculateOrderTotal)
+            </summary>
+            <param name="Parent"></param>
+            <param name="Method"></param>
+            <param name="Params"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.CreateInstanceFromType(System.Type)">
+            <summary>
+            Creates an instance from a type by calling the parameterless constructor.
+            
+            Note this will not work with COM objects - continue to use the Activator.CreateInstance
+            for COM objects.
+            <seealso>Class wwUtils</seealso>
+            </summary>
+            <param name="TypeToCreate">
+            The type from which to create an instance.
+            </param>
+            <returns>object</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.TypedValueToString(System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a type to string if possible. This method supports an optional culture generically on any value.
+            It calls the ToString() method on common types and uses a type converter on all other objects
+            if available
+            </summary>
+            <param name="RawValue">The Value or Object to convert to a string</param>
+            <param name="Culture">Culture for numeric and DateTime values</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.TypedValueToString(System.Object)">
+            <summary>
+            Converts a type to string if possible. This method uses the current culture for numeric and DateTime values.
+            It calls the ToString() method on common types and uses a type converter on all other objects
+            if available.
+            </summary>
+            <param name="RawValue">The Value or Object to convert to a string</param>
+            <param name="Culture">Culture for numeric and DateTime values</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.StringToTypedValue(System.String,System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            Turns a string into a typed value. Useful for auto-conversion routines
+            like form variable or XML parsers.
+            <seealso>Class wwUtils</seealso>
+            </summary>
+            <param name="SourceString">
+            The string to convert from
+            </param>
+            <param name="TargetType">
+            The type to convert to
+            </param>
+            <param name="Culture">
+            Culture used for numeric and datetime values.
+            </param>
+            <returns>object. Throws exception if it cannot be converted.</returns>
+        </member>
+        <member name="M:Westwind.Tools.wwUtils.StringToTypedValue(System.String,System.Type)">
+            <summary>
+            Turns a string into a typed value. Useful for auto-conversion routines
+            like form variable or XML parsers.
+            </summary>
+            <param name="SourceString">The input string to convert</param>
+            <param name="TargetType">The Type to convert it to</param>
+            <returns>object reference. Throws Exception if type can not be converted</returns>
+        </member>
+        <member name="M:ExpandUrlsParser.ExpandUrls(System.String)">
+            <summary>
+            Expands links into HTML hyperlinks inside of text or HTML.
+            </summary>
+            <param name="Text">The text to expand</param>
+            <param name="Target">Target frame where output is displayed</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExpandUrlsParser.ExpandUrlsRegExEvaluator(System.Text.RegularExpressions.Match)">
+            <summary>
+            Internal RegExEvaluator callback
+            </summary>
+            <param name="M"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Westwind.Web.Controls.wwHoverPanel">
+            <summary>
+            The wwHoverPanel class provides an easy to use base AJAX control that allows
+            quick access to server side resources from within a client side Web page. The
+            Control provides the following features:
+            
+            HoverPanel Hover Windows
+            Call a URL to retrieve an Html Response and display it at the current
+            mouse position as a hover window that goes away when mousing out.
+            
+            Server Page Method Callbacks using two-way JSON Serialization
+            Call server side methods on the server page. Methods need to be marked up
+            with a [CallbackMethod] Attribute and can simply accept and return many
+            common data types. Simple types, hierarchical objects, arrays and IList
+            based classes are supported for two-way transfers. DataSets/DataTables/DataRows
+            are support for downloading only at this time.
+            
+            External Page Callbacks 
+            Allows easily calling back to other pages in the Web site and return the result
+            as a string to the client. Literally can be done with one line of code and hooking
+            up an event handler.
+            </summary>
+        </member>
+        <member name="T:Westwind.Web.Controls.wwDragPanel">
+            <summary>
+            A draggable Panel control that can be dragged around the current browser window.
+            Dragging is supported for the panel and initiated through a drag handle control - 
+            a control that is contained in the window and acts as the draggable hot spot that
+            initiates dragging. You can also make the Panel itself the drag handle.
+            
+            The control can also optionally display a close button that allows hiding the control
+            by changing its client side visibility.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwDragPanel.DragHandleID">
+            <summary>
+            The ID of the control that is used as the drag handle to initiate a drag operation.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwDragPanel.Draggable">
+            <summary>
+            Determines whether this control is draggable
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwDragPanel.Closable">
+            <summary>
+            Flag that determines whether a closebox is rendered into the &lt;div&gt; 
+            specified as a drag handle.
+            <seealso>Class wwDragPanel</seealso>
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwDragPanel.CloseBoxImage">
+            <summary>
+            Optional Image used for close box if ShowCloseBoxOnDragHandle is true.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwDragPanel.OnClientCloseHandler">
+            <summary>
+            Optional client script handler called when the window is closed.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Westwind.Web.Controls.wwHoverPanel.OnPreRender(System.EventArgs)" -->
+        <member name="M:Westwind.Web.Controls.wwHoverPanel.GenerateControlSpecificJavaScript">
+            <summary>
+            Generates the ControlSpecific JavaScript. This script is safe to
+            allow multiple callbacks to run simultaneously.
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwHoverPanel.GetCallbackEventReference(System.String)">
+            <summary>
+            Returns an Event Callback reference string that can be used in Client
+            script to initiate a callback request. 
+            </summary>
+            <param name="QueryStringExpression">
+            An expression that is evaluated in script code and embedded as the second parameter.
+            The value of this second parameter is interpreted as a QueryString to the URL that
+            is fired in response to the request to the server.
+            
+            This expression can be a static string or any value or expression that is in scope
+            at the time of calling the event method. The expression must evaluate to a string
+             
+            Example: 
+            string GetCallbackEventReference("'CustomerId=' + this.forms[0].txtCustomerId.value + "'");
+             
+            A callback event reference result looks like this:
+            
+            ControlID_StartCallback(event,'CustomerId=_12312')
+            </param>
+            <returns></returns>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.OnCompleteClientHandler">
+            <summary>
+            The client script event handler function called when the remote call completes. 
+            Optional for panel operations. Receives a result string with GetHttpResponse mode is used.        
+            <seealso>Class wwHoverPanel</seealso>
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.ServerUrl">
+            <summary>
+            The Url to hit on the server for the callback to return the result. Note: Not used when doing a MethodCallback
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.NavigateDelay">
+            <summary>
+            Determines if the navigation is delayed by a hesitation. Useful for link hovering.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.IsCallback">
+            <summary>
+            Determines whether this request is a callbackDetermines whether the current
+             request is a callback from the wwMethodCallback or wwHoverPanel control.
+            
+            This property is used internally to trap for method processing, but you can
+             also use this in your page or control level code to determine whether you 
+            need to do any special processing based on the callback situation.
+            <seealso>Class wwHoverPanel</seealso>
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.EventHandlerMode">
+            <summary>
+            Determines the how the event is handled  on the callback request. ShowHtmlMousePosition shows the result in a window. CallEventHandler fires the specified script function.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.HtmlTargetClientId">
+            <summary>
+            The client ID of the control that receives the hoverpanel output. This affects only the HTML if empty the hoverpanel is used.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.AdjustWindowPosition">
+            <summary>
+            if set tries to move up the window if it's too low to fit content. This setting can cause problems with very large content.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.AutoCloseHoverWindow">
+            <summary>
+            Determines whether the window is closed automatically if you mouse off it
+            when the window is a hover window.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.PanelOpacity">
+            <summary>
+            Optional Opacity level in decimal percentage values (ie. 0.65 for 65%) for the panel background. Supported only in Mozilla and IE browsers. The value is given as fractional percentage.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.ShadowOffset">
+            <summary>
+            Optionally used to specify a shadow below the panel. If 0 no shadow is created. If greater than 0 the panel is rendered.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.ShadowOpacity">
+            <summary>
+            The opacity of the Panel's shadow if PanelShadoOffset is set.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.HoverOffsetRight">
+            <summary>
+            The right offset when the the panel is shown at the mouse position
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.HoverOffsetBottom">
+            <summary>
+            The bottom offset when the the panel is shown at the mouse position
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.PostBackMode">
+            <summary>
+            If true causes the page to post back all form variables.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.PostBackFormName">
+            <summary>
+            The name of the form from which values are posted back to the server. Note only a single form's 
+            values can be posted back!
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.IFrameHeight">
+            <summary>
+            The height of an IFRAME if mode is IFrame related. Use this if you need to specifically size the IFRAME within the rendered panel to get the size just right.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.ScriptLocationType">
+            <summary>
+            Determines how the JavasScript library gets loaded into the page.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.ScriptLocation">
+            <summary>
+            Determines the location of thte JavaScript support file if ScriptLocationType is set to ExternalFile
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.UniqueID">
+            <summary>
+            Override to force simple IDs all around
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwHoverPanel.ClientID">
+            <summary>
+            Override to force simple IDs all around
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.HoverEventHandlerModes.ShowHtmlAtMousePosition">
+            <summary>
+            Displays a hover window at the current mouse position. Calls a URL 
+            specified in the ServerUrl property when the call is initiated. The call 
+            initiation can add an additional queryString to specify 'parameters' for 
+            the request.
+            <seealso>Enumeration HoverEventHandlerModes</seealso>
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.HoverEventHandlerModes.ShowHtmlInPanel">
+            <summary>
+            Shows the result of the URL in the panel. Works like ShowHtmlInPanel
+            except that the panel is not moved when the callback completes.
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.HoverEventHandlerModes.ShowIFrameAtMousePosition">
+            <summary>
+            Displays a URL in an IFRAME which is independent of the
+            current page.
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.HoverEventHandlerModes.ShowIFrameInPanel">
+            <summary>
+            Shows an IFRAME in a panel
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.HoverEventHandlerModes.GetHttpResponse">
+            <summary>
+            Calls an external Page and returns the HTML result into the 
+            ClientEventHandler specified for the control. This is a really high level 
+            mechanism.
+            <seealso>Enumeration HoverEventHandlerModes</seealso>
+            </summary>        
+        </member>
+        <member name="F:Westwind.Web.Controls.PostBackModes.None">
+            No Form data is posted (but there may still be some post state)
+        </member>
+        <member name="F:Westwind.Web.Controls.PostBackModes.Get">
+            <summary>
+            No POST data is posted back to the server
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.PostBackModes.Post">
+            <summary>
+            Only standard POST data is posted back - ASP.NET Post stuff left out
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.PostBackModes.PostNoViewstate">
+            <summary>
+            Posts back POST data but skips ViewState and EventTargets
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.PostBackModes.PostMethodParametersOnly">
+            <summary>
+            Posts only the method parameters and nothing else
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.JavaScriptCodeLocationTypes.EmbeddedInPage">
+            <summary>
+            Causes the Javascript code to be embedded into the page on every 
+            generation. Fully self-contained.
+            <seealso>Enumeration JavaScriptCodeLocationTypes</seealso>
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.JavaScriptCodeLocationTypes.ExternalFile">
+            <summary>
+            Keeps the .js file as an external file in the Web application. If this is 
+            set you should set the &lt;&lt;%= TopicLink([ScriptLocation],[_1Q01F9K4D]) 
+            %&gt;&gt; Property to point at the location of the file.
+            
+            This option requires that you deploy the .js file with your application.
+            <seealso>Enumeration JavaScriptCodeLocationTypes</seealso>
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.JavaScriptCodeLocationTypes.WebResource">
+            <summary>
+            ASP.NET 2.0 option to generate a WebResource.axd call that feeds the .js 
+            file to the client.
+            <seealso>Enumeration JavaScriptCodeLocationTypes</seealso>
+            </summary>
+        </member>
+        <member name="T:Westwind.Web.Controls.wwCallbackHandler">
+            <summary>
+            An HTTP Handler base class that can be used to act as a service
+            for handling inbound wwCallbackMethod requests. Simply subclass
+            the handler (ASHX or a web.config hooked HttpHandler) and 
+            mark any methods of the handler with the [CallbackMethod]
+            attribute to expose those methods externally.
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwCallbackHandler.ProcessCallbackMethodCall">
+            <summary>
+            Handles page callbacks for either plain callbacks (raw string responses)
+            or Method Callbacks which are routed to the appropriate methods
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwCallbackHandler.ExecuteMethod(System.String,System.Collections.ArrayList)">
+            <summary>
+            Executes the requested method. converts the String parameters
+            to the proper types for execution.
+            </summary>
+            <param name="Method"></param>
+            <param name="ParameterList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwCallbackHandler.WriteErrorResponse(System.String)">
+            <summary>
+            Returns an error response to the client from a callback. Code
+            should exit after this call.
+            </summary>
+            <param name="ErrorMessage"></param>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwCallbackHandler.IsReusable">
+            <summary>
+            This handler is thread-safe
+            </summary>
+        </member>
+        <member name="T:Westwind.Web.Controls.ControlResources">
+            <summary>
+            Class is used as to consolidate access to resources
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.ControlResources.LoadwwScriptLibrary(System.Web.UI.Control)">
+            <summary>
+            Embeds the client script library into the page as a Resource
+            </summary>
+            <param name="page"></param>
+        </member>
+        <member name="T:Westwind.Web.Controls.JSONSerializer">
+            <summary>
+            Summary description for JSONSerializer
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.JSONSerializer.Serialize(System.Object)">
+            <summary>
+            Serializes a value into a JSON compatible string.
+            
+            The serializer supports:
+            &lt;&lt;ul&gt;&gt;
+            &lt;&lt;li&gt;&gt; All simple types
+            &lt;&lt;li&gt;&gt; POCO objects and Hierarchical POCO objects
+            &lt;&lt;li&gt;&gt; Arrays
+            &lt;&lt;li&gt;&gt; IList based collections
+            &lt;&lt;li&gt;&gt; DataSet
+            &lt;&lt;li&gt;&gt; DataTable
+            &lt;&lt;li&gt;&gt; DataRow
+            &lt;&lt;/ul&gt;&gt;
+            <seealso>Class JSONSerializer</seealso>
+            </summary>
+            <param name="Value">
+            The strongly typed value to parse
+            </param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.JSONSerializer.Deserialize(System.String,System.Type)">
+            <summary>
+            Takes a JSON string and attempts to create a .NET object from this 
+            structure. An input type is required and any type that is serialized to 
+            must support a parameterless constructor.
+            
+            The de-serializer instantiates each object and runs through the properties
+            
+            The deserializer supports
+            &lt;&lt;ul&gt;&gt;
+            &lt;&lt;li&gt;&gt; All simple types
+            &lt;&lt;li&gt;&gt; Most POCO objects and Hierarchical POCO objects
+            &lt;&lt;li&gt;&gt; Arrays and Object Arrays
+            &lt;&lt;li&gt;&gt; IList based collections
+            &lt;&lt;/ul&gt;&gt;
+            
+            Note that the deserializer doesn't support DataSets/Tables/Rows like the 
+            serializer as there's no type information available from the client to 
+            create these objects on the fly.
+            <seealso>Class JSONSerializer</seealso>
+            </summary>
+            <param name="JSONText">
+            A string of JSON text passed from the client.
+            </param>
+            <param name="ValueType">
+            The type of the object that is to be created from the JSON text.
+            </param>
+            <returns>The parsed object or null on failure. An exception is thrown if the type cannot be created</returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.JSONSerializer.ParseValueString(System.String,System.Type)">
+            <summary>
+            High level parsing method that takes a JSON string and tries to
+            convert it to the appropriate type. 
+            </summary>
+            <param name="Value"></param>
+            <param name="ValueType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.JSONSerializer.ParseObject(System.IO.StringReader,System.Type,System.Boolean)">
+            <summary>
+            Parsing routine specific to parsing an object. Note the recursive flag which 
+            allows skipping over prefix information.
+            </summary>
+            <param name="Reader"></param>
+            <param name="ValueType"></param>
+            <param name="RecursiveCall"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.JSONSerializer.ParseArray(System.IO.StringReader,System.Type)">
+            <summary>
+            Parses a array subtype 
+            </summary>
+            <param name="Reader"></param>
+            <param name="ArrayType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.JSONSerializer.GetArrayType(System.Type)">
+            <summary>
+            Returns the type of item type of the array/collection
+            </summary>
+            <param name="ArrayType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Westwind.Web.Controls.wwModalDialog">
+            <summary>
+            This control allows creating a client side pop up window that blocks
+            out the background and brings a dialog to the foreground. This control
+            can be used to replace ugly alert or prompt boxes to pop up rich dialogs
+            that must be edited modally. Any dialog can be popped up like this.
+            
+            The client side counter part class can be used without this server side
+            control and allows a few extra features, such as a mechanism to display 
+            a dialog without controls on the page to map to.
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwModalDialog.Show(System.String,System.String)">
+            <summary>
+            Forces the message display to be shown when the page loads.
+            </summary>
+            <param name="Message"></param>
+            <param name="Title"></param>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwModalDialog.Show(System.String,System.String,System.String,System.String)">
+            <summary>
+            Forces the message display to be shown when the page loads.
+            </summary>
+            <param name="Message"></param>
+            <param name="Title"></param>
+            <param name="OkButtonText"></param>
+            <param name="CancelButtonText"></param>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.BackgroundOpacity">
+            <summary>
+            The opacity of of the overlay background in a decimal percentage. Default to .85
+            </summary>    
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.ContentId">
+            <summary>
+            The client ID of the element that receives the content message. 
+            If not specified the message is written to the body of the control.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.HeaderId">
+            <summary>
+            ID of a header element that receives the Title when calling showDialog()
+            on the client. Optional - if not specified the header is not set which 
+            means the dialog displays as designed.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.OverlayId">
+            <summary>
+            Optional Id that is to be used for the shaded Overlay. This allows you
+            to create a colored or otherwise designed background that pops over the
+            existing content.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.OkButtonId">
+            <summary>
+            The ID of the button that is used to close the dialog. A button and this
+            ID are required.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.CancelButtonId">
+            <summary>
+            Optional ID of a button that is used to cancel an operation. This 
+            Id is optional and should be used only if you have a second button.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.OnClientDialogClick">
+            <summary>
+            Client side event handler that is fired when a button is clicked
+            to close the dialog. The handler receives two parameters: 1 or 0
+            for Ok or Cancel respectively, and the object that fired the event
+            which is the button. This allows you to retrieve the caption.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.zIndex">
+            <summary>
+            The zIndex value for the overlay and dialog. This value must be 
+            higher than any other control on the page in order for the 
+            dialog to pop up on top. 
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.ScriptLocation">
+            <summary>
+            Determines the location of thte JavaScript support file if ScriptLocationType is set to ExternalFile
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.UniqueID">
+            <summary>
+            Override to force simple IDs all around
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwModalDialog.ClientID">
+            <summary>
+            Override to force simple IDs all around
+            </summary>
+        </member>
+        <member name="T:Westwind.Web.Controls.ClientScriptProxy">
+            <summary>
+            This is a proxy object for the Page.ClientScript and MS Ajax ScriptManager
+            object that can operate when MS Ajax is not present. Because MS Ajax
+            may not be available accessing the methods directly is not possible
+            and we are required to indirectly reference client script methods through
+            this class.
+            
+            This class should be invoked at the Control's start up and be used
+            to replace all calls Page.ClientScript. Scriptmanager calls are made
+            through Reflection
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.ClientScriptProxy._IsMsAjax">
+            <summary>
+            Internal global static that gets set when IsMsAjax() is
+            called. The result is cached once per application so 
+            we don't have keep making reflection calls for each access
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.ClientScriptProxy._CheckedForMsAjax">
+            <summary>
+            Flag that determines whether check was previously done
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.ClientScriptProxy._IsScriptManagerOnPage">
+            <summary>
+            Cached value to see whether the script manager is
+            on the page. This value caches here once per page.
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.ClientScriptProxy.#ctor">
+            <summary>
+            No public constructor - use ClientScriptProxy.Current to
+            get an instance to ensure you once have one instance per
+            page active.
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.ClientScriptProxy.IsMsAjax">
+            <summary>
+            Checks to see if MS Ajax is registered with the current
+            Web application.
+            
+            Note: Method is static so it can be directly accessed from
+            anywhere. If you use the IsMsAjax property to check the
+            value this method fires only once per application.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.ClientScriptProxy.IsScriptManagerOnPage(System.Web.UI.Page)">
+            <summary>
+            Checks to see if a script manager is on the page
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.ClientScriptProxy.RegisterClientScriptResource(System.Web.UI.Control,System.Type,System.String)">
+            <summary>
+            Returns a WebResource or ScriptResource URL for script resources that are to be
+            embedded as script includes.
+            </summary>
+            <param name="control"></param>
+            <param name="type"></param>
+            <param name="resourceName"></param>
+        </member>
+        <member name="M:Westwind.Web.Controls.ClientScriptProxy.RegisterClientScriptBlock(System.Web.UI.Control,System.Type,System.String,System.String,System.Boolean)">
+            <summary>
+            Registers a client script block in the page.
+            </summary>
+            <param name="control"></param>
+            <param name="type"></param>
+            <param name="key"></param>
+            <param name="script"></param>
+            <param name="addScriptTags"></param>
+        </member>
+        <member name="M:Westwind.Web.Controls.ClientScriptProxy.RegisterStartupScript(System.Web.UI.Control,System.Type,System.String,System.String,System.Boolean)">
+            <summary>
+            Registers a startup code snippet that gets placed at the bottom of the page
+            </summary>
+            <param name="control"></param>
+            <param name="type"></param>
+            <param name="key"></param>
+            <param name="script"></param>
+            <param name="addStartupTags"></param>
+        </member>
+        <member name="M:Westwind.Web.Controls.ClientScriptProxy.RegisterClientScriptInclude(System.Web.UI.Control,System.Type,System.String,System.String)">
+            <summary>
+            Registers a script include tag into the page for an external script url
+            </summary>
+            <param name="control"></param>
+            <param name="type"></param>
+            <param name="key"></param>
+            <param name="url"></param>
+        </member>
+        <member name="M:Westwind.Web.Controls.ClientScriptProxy.GetWebResourceUrl(System.Web.UI.Control,System.Type,System.String)">
+            <summary>
+            Returns a WebResource URL for non script resources
+            </summary>
+            <param name="control"></param>
+            <param name="type"></param>
+            <param name="resourceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.ClientScriptProxy.RegisterHiddenField(System.Web.UI.Control,System.String,System.String)">
+            <summary>
+            Injects a hidden field into the page
+            </summary>
+            <param name="control"></param>
+            <param name="hiddenFieldName"></param>
+            <param name="hiddenFieldInitialValue"></param>
+        </member>
+        <member name="P:Westwind.Web.Controls.ClientScriptProxy.Current">
+            <summary>
+            Current instance of this class which should always be used to 
+            access this object. There are no public constructors to
+            ensure the reference is used as a Singleton to further
+            ensure that all scripts are written to the same clientscript
+            manager.
+            </summary>
+        </member>
+        <member name="T:Westwind.Web.Controls.wwMethodCallback">
+            <summary>
+            The wwMethodCallback control provides an easy mechanism for making page or 
+            control level method callbacks from an HTML page. Working with both client 
+            side and server side logic you can make remote method calls from the client
+             using two-way JSON serialization to access server side content from client
+             pages.
+            
+            Methods are mapped from server to the client with an optional client proxy 
+            class that allows making direct method calls to the server. Methods on the 
+            server are marked up with a [CallbackMethod] to indicate that the methods 
+            are accessible for callbacks. These methods can be implemented on the page,
+             any user control, or custom server control. The latter also allows control
+             developers to dynamically route callbacks to their own controls.
+            
+            Methods called use JSON to pass data and simple types, hierarchical 
+            objects, arrays and IList based classes are supported for two-way 
+            transfers. DataSets/DataTables/DataRows are support for downloading only at
+             this time.
+            
+            This control makes accessing server side content as easy as calling a 
+            single proxy method and implementing a single client side handler to 
+            receive the result value as a strongly typed object.
+            </summary>
+        </member>
+        <member name="F:Westwind.Web.Controls.wwMethodCallback.ClientScriptProxy">
+            <summary>
+            Wrapper ClientScript used to allow use ScriptManager methods
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Westwind.Web.Controls.wwMethodCallback.OnPreRender(System.EventArgs)" -->
+        <member name="M:Westwind.Web.Controls.wwMethodCallback.GenerateControlSpecificJavaScript">
+            <summary>
+            Generates the ControlSpecific JavaScript. This script is safe to
+            allow multiple callbacks to run simultaneously.
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwMethodCallback.ProcessCallbackMethodCall">
+            <summary>
+            Handles page callbacks for either plain callbacks (raw string responses)
+            or Method Callbacks which are routed to the appropriate methods
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwMethodCallback.ExecuteMethod(System.Web.UI.Control,System.String,System.Collections.ArrayList)">
+            <summary>
+            Executes the requested method. converts the String parameters
+            to the proper types for execution.
+            </summary>
+            <param name="Method"></param>
+            <param name="ParameterList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwMethodCallback.WriteErrorResponse(System.String)">
+            <summary>
+            Returns an error response to the client from a callback. Code
+            should exit after this call.
+            </summary>
+            <param name="ErrorMessage"></param>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwMethodCallback.GenerateClassWrapperForCallbackMethods">
+            <summary>
+            Creates the JavaScript client side object that matches the 
+            server side method signature. The JScript function maps
+            to a CallMethod() call on the client.
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwMethodCallback.GetCallbackEventReference(System.String)">
+            <summary>
+            Returns an Event Callback reference string that can be used in Client
+            script to initiate a callback request. 
+            </summary>
+            <param name="QueryStringExpression">
+            An expression that is evaluated in script code and embedded as the second parameter.
+            The value of this second parameter is interpreted as a QueryString to the URL that
+            is fired in response to the request to the server.
+            
+            This expression can be a static string or any value or expression that is in scope
+            at the time of calling the event method. The expression must evaluate to a string
+             
+            Example: 
+            string GetCallbackEventReference("'CustomerId=' + this.forms[0].txtCustomerId.value + "'");
+             
+            A callback event reference result looks like this:
+            
+            ControlID_StartCallback(event,'CustomerId=_12312')
+            </param>
+            <returns></returns>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.ServerUrl">
+            <summary>
+            The Url to hit on the server for the callback to return the result. Note: Not used when doing a MethodCallback
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.IsCallback">
+            <summary>
+            Determines whether the current request is a callback from the 
+            wwMethodCallback or wwHoverPanel control.
+            
+            This property is used internally to trap for method processing, but you can
+             also use this in your page or control level code to determine whether you 
+            need to do any special processing based on the callback situation.
+            <seealso>Class wwMethodCallback</seealso>
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.PostBackMode">
+            <summary>
+            If true causes the page to post back all form variables.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.PostBackFormName">
+            <summary>
+            The name of the form from which values are posted back to the server. Note only a single form's 
+            values can be posted back!
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.ScriptLocationType">
+            <summary>
+            Determines how the JavasScript code gets embedded into the page.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.ScriptLocation">
+            <summary>
+            Determines the location of thte JavaScript support file if ScriptLocationType is set to ExternalFile
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.TargetControlId">
+            <summary>
+            Determines which control holds the methods that are to be called.
+            By default this is the Page object, but you can use this in a custom
+            control and route method calls to the control instead. 
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.TargetCallbackType">
+            <summary>
+            The type of the object that is going to be the target of
+            the callback. Typically this will be this.Page, but if 
+            you route calls to another control or a handler you
+            need to set this type to allow the control to create
+            the proxy.
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.GenerateClientProxyClass">
+            <summary>
+            If true generates a proxy class that maps each of the methods exposed with 
+            [CallbackMethod] on the current page, user control or control and exposes 
+            it as a client side class. The name of the class will be the same as the ID
+             of the wwMethodCallback control.
+            
+            By default the class is generated. If false the class is not generated and 
+            you can use the client side wwMethodCallback object and use declaritive 
+            code to create the method callbacks manually.
+            <seealso>Class wwMethodCallback</seealso>
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.UniqueID">
+            <summary>
+            Override to force simple IDs all around
+            </summary>
+        </member>
+        <member name="P:Westwind.Web.Controls.wwMethodCallback.ClientID">
+            <summary>
+            Override to force simple IDs all around
+            </summary>
+        </member>
+        <member name="T:Westwind.Web.Controls.CallbackMethodAttribute">
+            <summary>
+            Identifier Attribute to be used on Callback methods. Signals
+            parser that the method is allowed to be executed remotely
+            </summary>
+        </member>
+        <member name="T:Westwind.Web.Controls.wwHoverPanelException">
+            <summary>
+            Special return type used to indicate that an exception was
+            fired on the server. This object is JSON serialized and the
+            client can check for Result.IsCallbackError to see if a 
+            a failure occured on the server.
+            </summary>
+        </member>
+        <member name="T:Westwind.Web.Controls.wwMethodCallbackDesigner">
+            <summary>
+            Control designer used so we get a grey button display instead of the 
+            default label display for the control.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Westwind.Web.Controls.wwScriptCompressionModule" -->
+        <member name="F:Westwind.Web.Controls.wwScriptCompressionModule.wwScriptCompressionModuleActive">
+            <summary>
+            Global flag that is set when the module is first loaded
+            and allows code to check whether the module is loaded.
+            </summary>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwScriptCompressionModule.PostResolveRequestCache(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwScriptCompressionModule.SendErrorResponse(System.String)">
+            <summary>
+            Returns an error response to the client. Generates a 404 error
+            </summary>
+            <param name="Message"></param>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwScriptCompressionModule.SendOutput(System.Byte[],System.Boolean)">
+            <summary>
+            Sends the output to the client using appropriate cache settings.
+            Content should be already encoded and ready to be sent as binary.
+            </summary>
+            <param name="Output"></param>
+            <param name="UseGZip"></param>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwScriptCompressionModule.OptimizeScript(System.String)">
+            <summary>
+            Very basic script optimization to reduce size:
+            Remove any leading white space and any lines starting
+            with //. 
+            </summary>
+            <param name="Script"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwScriptCompressionModule.FindAssembly(System.String)">
+            <summary>
+            Finds an assembly in the current loaded assembly list
+            </summary>
+            <param name="TypeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwScriptCompressionModule.GZipMemory(System.Byte[])">
+            <summary>
+            Takes a binary input buffer and GZip encodes the input
+            </summary>
+            <param name="Buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Westwind.Web.Controls.wwScriptCompressionModule.GZipMemory(System.String)">
+            <summary>
+            Takes a string input and GZip encodes the input
+            </summary>
+            <param name="Input"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
